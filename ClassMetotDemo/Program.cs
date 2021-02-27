@@ -22,11 +22,33 @@ namespace ClassMetotDemo
             musteri3.Soyad = "KARA";
             musteri3.Telefon = 5687471489;
 
-            MusteriManager musteriManager = new MusteriManager();
-            musteriManager.MusteriEkle(musteri1);
-            musteriManager.MusteriEkle(musteri2);
-            musteriManager.MusteriEkle(musteri3);
+            int i;
+            Console.WriteLine("Bir işlem seçiniz.");
+            Console.WriteLine("1-Müşterileri Ekleme.");
+            Console.WriteLine("2-Müşterileri Listeleme.");
+            Console.WriteLine("3-Müşterileri Silme.");
+            i = Convert.ToInt16(Console.ReadLine());
 
+            Musteri[] musteriler = new Musteri[] {musteri1, musteri2, musteri3};
+            MusteriManager musteriManager = new MusteriManager();
+            
+            if (i == 1)
+            {
+                musteriManager.MusteriEkle(musteri1);
+                musteriManager.MusteriEkle(musteri2);
+                musteriManager.MusteriEkle(musteri3);
+            }else if(i == 2){
+                musteriManager.MusteriListele(musteriler);
+            }else if(i == 3)
+            {
+                musteriManager.MusteriSil(musteri1);
+                musteriManager.MusteriSil(musteri2);
+                musteriManager.MusteriSil(musteri3);
+            }
+            else
+            {
+                Console.WriteLine("Yanlış seçim yaptınız.");
+            }
         }
     }
 }

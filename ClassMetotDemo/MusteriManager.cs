@@ -15,9 +15,20 @@ namespace ClassMetotDemo
             Console.WriteLine("------------------------------");
         }
 
-        public void MusteriListele(Musteri musteri)
+        public void MusteriListele(Musteri[] musteriler)
         {
-
+            Console.WriteLine("Müşteriler Listeleniyor!");
+            
+            foreach (var musteri in musteriler)
+            {
+                Console.WriteLine(musteri.Ad + " " + musteri.Soyad + " " + musteri.Telefon);
+                Console.WriteLine("------------------------------");
+            }
+        }
+        public void MusteriSil(Musteri musteri)
+        {
+            Console.WriteLine("Kaydınızı sildiğimiz için üzgünüz.");
+            Console.WriteLine("Sayın : " + musteri.Ad + " " + musteri.Soyad);
         }
     }
 }
